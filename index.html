@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Professional Registration Form</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, #dbeafe, transparent 35%),
+        radial-gradient(circle at bottom right, #ede9fe, transparent 35%),
+        #f5f7fb;
+    color: #172033;
+    padding: 45px 18px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.form-card {
+    background: rgba(255,255,255,0.96);
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+        0 25px 60px rgba(31, 41, 55, 0.12),
+        0 5px 15px rgba(31, 41, 55, 0.05);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.form-header {
+    padding: 42px 40px;
+    text-align: center;
+    background:
+        linear-gradient(135deg, #172554, #312e81, #4f46e5);
+    color: white;
+}
+
+.form-header .icon {
+    width: 65px;
+    height: 65px;
+    margin: auto auto 15px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.form-header h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: #dbeafe;
+    font-size: 14px;
+}
+
+/* =========================
+   FORM CONTENT
+========================= */
+
+form {
+    padding: 38px 42px 42px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #1e1b4b;
+
+    margin: 30px 0 20px;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+
+.section-title::before {
+    content: "";
+    width: 5px;
+    height: 25px;
+    border-radius: 10px;
+    background: linear-gradient(
+        180deg,
+        #4f46e5,
+        #7c3aed
+    );
+}
+
+/* =========================
+   GRID
+========================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* =========================
+   LABELS
+========================= */
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #dc2626;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1.5px solid #d1d5db;
+    border-radius: 11px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+
+    padding: 13px 15px;
+
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #a5b4fc;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4f46e5;
+    box-shadow:
+        0 0 0 4px rgba(79,70,229,0.10);
+}
+
+textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+/* VALID */
+
+input.valid,
+select.valid,
+textarea.valid {
+    border-color: #16a34a;
+    background: #f0fdf4;
+}
+
+/* INVALID */
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #dc2626;
+    background: #fff7f7;
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+    min-height: 18px;
+    margin-top: 6px;
+
+    font-size: 12px;
+    font-weight: 500;
+    color: #dc2626;
+}
+
+/* =========================
+   GENDER
+========================= */
+
+.gender-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.gender-option {
+    display: flex !important;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 9px;
+
+    background: #f9fafb;
+    cursor: pointer;
+
+    font-weight: 500 !important;
+    color: #4b5563 !important;
+
+    transition: 0.2s;
+}
+
+.gender-option:hover {
+    border-color: #a5b4fc;
+    background: #eef2ff;
+}
+
+.gender-option input {
+    width: auto;
+    accent-color: #4f46e5;
+}
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 70px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #4f46e5;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+/* =========================
+   PASSWORD STRENGTH
+========================= */
+
+.strength-container {
+    margin-top: 10px;
+}
+
+.strength-bar {
+    height: 7px;
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+    border-radius: 10px;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+
+    border-radius: 10px;
+
+    background: #ef4444;
+
+    transition: all 0.3s ease;
+}
+
+.strength-text {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+/* =========================
+   PASSWORD CHECKLIST
+========================= */
+
+.requirements {
+    list-style: none;
+
+    margin-top: 12px;
+    padding: 13px 15px;
+
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.requirements li {
+    margin: 6px 0;
+
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.requirements li.valid {
+    color: #15803d;
+    font-weight: 700;
+}
+
+/* =========================
+   TERMS
+========================= */
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 25px;
+    padding: 15px;
+
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.terms input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+
+    accent-color: #4f46e5;
+}
+
+.terms label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.5;
+    color: #4b5563 !important;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+button {
+    min-height: 50px;
+
+    border: none;
+    border-radius: 11px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.submit-btn {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 8px 20px rgba(79,70,229,0.22);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(79,70,229,0.3);
+}
+
+.reset-btn {
+    background: #f3f4f6;
+    color: #374151;
+
+    border: 1px solid #d1d5db;
+}
+
+.reset-btn:hover {
+    background: #e5e7eb;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.success-message {
+    display: none;
+
+    margin-top: 20px;
+    padding: 16px;
+
+    border-radius: 11px;
+
+    background: #ecfdf5;
+    border: 1px solid #86efac;
+
+    color: #166534;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* =========================
+   FOCUS
+========================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(79,70,229,0.25);
+    outline-offset: 2px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .form-header {
+        padding: 32px 20px;
+    }
+
+    .form-header h1 {
+        font-size: 26px;
+    }
+
+    form {
+        padding: 25px 18px 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .gender-options {
+        flex-direction: column;
+    }
+
+    .gender-option {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="form-card">
+
+<header class="form-header">
+
+    <div class="icon">✦</div>
+
+    <h1>Create Your Account</h1>
+
+    <p>
+        Complete the registration form to create your account.
+    </p>
+
+</header>
+
+
+<form id="registrationForm" novalidate>
+
+<!-- ================= PERSONAL ================= -->
+
+<h2 class="section-title">
+    Personal Information
+</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label for="fullName">
+    Full Name <span class="required">*</span>
+</label>
+
+<input
+    type="text"
+    id="fullName"
+    name="fullName"
+    placeholder="Enter your full name"
+    autocomplete="name"
+    minlength="3"
+    maxlength="50"
+    required
+    aria-describedby="fullNameError"
+>
+
+<div class="error" id="fullNameError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+    Email Address <span class="required">*</span>
+</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="example@email.com"
+    autocomplete="email"
+    required
+    aria-describedby="emailError"
+>
+
+<div class="error" id="emailError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="phone">
+    Phone Number <span class="required">*</span>
+</label>
+
+<input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="+91 9876543210"
+    autocomplete="tel"
+    required
+    aria-describedby="phoneError"
+>
+
+<div class="error" id="phoneError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="dob">
+    Date of Birth <span class="required">*</span>
+</label>
+
+<input
+    type="date"
+    id="dob"
+    name="dob"
+    autocomplete="bday"
+    required
+    aria-describedby="dobError"
+>
+
+<div class="error" id="dobError"></div>
+
+</div>
+
+
+<div class="form-group full-width">
+
+<label>
+    Gender <span class="required">*</span>
+</label>
+
+<div class="gender-options">
+
+<label class="gender-option">
+<input type="radio" name="gender" value="Male">
+Male
+</label>
+
+<label class="gender-option">
+<input type="radio" name="gender" value="Female">
+Female
+</label>
+
+<label class="gender-option">
+<input type="radio" name="gender" value="Other">
+Other
+</label>
+
+<label class="gender-option">
+<input type="radio" name="gender" value="Prefer not to say">
+Prefer not to say
+</label>
+
+</div>
+
+<div class="error" id="genderError"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= ADDRESS ================= -->
+
+<h2 class="section-title">
+    Address Information
+</h2>
+
+<div class="form-grid">
+
+<div class="form-group full-width">
+
+<label for="address">
+    Address <span class="required">*</span>
+</label>
+
+<textarea
+    id="address"
+    name="address"
+    placeholder="Enter your complete address"
+    autocomplete="street-address"
+    minlength="10"
+    maxlength="200"
+    required
+    aria-describedby="addressError"
+></textarea>
+
+<div class="error" id="addressError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="city">
+    City <span class="required">*</span>
+</label>
+
+<input
+    type="text"
+    id="city"
+    name="city"
+    placeholder="Enter your city"
+    autocomplete="address-level2"
+    required
+    aria-describedby="cityError"
+>
+
+<div class="error" id="cityError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="state">
+    State <span class="required">*</span>
+</label>
+
+<select
+    id="state"
+    name="state"
+    required
+    autocomplete="address-level1"
+>
+
+<option value="">Select State</option>
+<option>Andhra Pradesh</option>
+<option>Telangana</option>
+<option>Karnataka</option>
+<option>Tamil Nadu</option>
+<option>Kerala</option>
+<option>Maharashtra</option>
+<option>Delhi</option>
+<option>Gujarat</option>
+<option>West Bengal</option>
+<option>Odisha</option>
+
+</select>
+
+<div class="error" id="stateError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="country">
+    Country <span class="required">*</span>
+</label>
+
+<select
+    id="country"
+    name="country"
+    required
+    autocomplete="country-name"
+>
+
+<option value="">Select Country</option>
+<option value="India">India</option>
+<option value="United States">United States</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="Canada">Canada</option>
+<option value="Australia">Australia</option>
+<option value="Singapore">Singapore</option>
+<option value="United Arab Emirates">
+United Arab Emirates
+</option>
+
+</select>
+
+<div class="error" id="countryError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="zip">
+    PIN / ZIP Code <span class="required">*</span>
+</label>
+
+<input
+    type="text"
+    id="zip"
+    name="zip"
+    placeholder="Enter PIN / ZIP code"
+    autocomplete="postal-code"
+    required
+>
+
+<div class="error" id="zipError"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= SECURITY ================= -->
+
+<h2 class="section-title">
+    Account Security
+</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label for="password">
+    Password <span class="required">*</span>
+</label>
+
+<div class="password-wrapper">
+
+<input
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Create a strong password"
+    autocomplete="new-password"
+    minlength="8"
+    maxlength="30"
+    required
+>
+
+<button
+    type="button"
+    class="toggle-password"
+    id="togglePassword"
+>
+Show
+</button>
+
+</div>
+
+
+<div class="strength-container">
+
+<div class="strength-bar">
+<div class="strength-fill" id="strengthFill"></div>
+</div>
+
+<div class="strength-text" id="strengthText"></div>
+
+</div>
+
+
+<ul class="requirements">
+
+<li id="reqLength">
+✗ Minimum 8 characters
+</li>
+
+<li id="reqUpper">
+✗ Uppercase letter
+</li>
+
+<li id="reqLower">
+✗ Lowercase letter
+</li>
+
+<li id="reqNumber">
+✗ Number
+</li>
+
+<li id="reqSpecial">
+✗ Special character
+</li>
+
+</ul>
+
+<div class="error" id="passwordError"></div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="confirmPassword">
+    Confirm Password <span class="required">*</span>
+</label>
+
+<div class="password-wrapper">
+
+<input
+    type="password"
+    id="confirmPassword"
+    name="confirmPassword"
+    placeholder="Re-enter your password"
+    autocomplete="new-password"
+    required
+>
+
+<button
+    type="button"
+    class="toggle-password"
+    id="toggleConfirmPassword"
+>
+Show
+</button>
+
+</div>
+
+<div
+    class="error"
+    id="confirmPasswordError"
+></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= TERMS ================= -->
+
+<div class="terms">
+
+<input
+    type="checkbox"
+    id="terms"
+    name="terms"
+    required
+>
+
+<label for="terms">
+
+I agree to the
+<strong>Terms and Conditions</strong>
+and confirm that the information provided is accurate.
+
+<span class="required">*</span>
+
+</label>
+
+</div>
+
+<div class="error" id="termsError"></div>
+
+
+<!-- ================= BUTTONS ================= -->
+
+<div class="buttons">
+
+<button
+    type="submit"
+    class="submit-btn"
+>
+    Create Account
+</button>
+
+<button
+    type="reset"
+    class="reset-btn"
+>
+    Reset / Clear
+</button>
+
+</div>
+
+
+<div
+    class="success-message"
+    id="successMessage"
+>
+✓ Registration successful!
+Your information has been validated successfully.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const form =
+document.getElementById("registrationForm");
+
+const fullName =
+document.getElementById("fullName");
+
+const email =
+document.getElementById("email");
+
+const phone =
+document.getElementById("phone");
+
+const dob =
+document.getElementById("dob");
+
+const address =
+document.getElementById("address");
+
+const city =
+document.getElementById("city");
+
+const state =
+document.getElementById("state");
+
+const country =
+document.getElementById("country");
+
+const zip =
+document.getElementById("zip");
+
+const password =
+document.getElementById("password");
+
+const confirmPassword =
+document.getElementById("confirmPassword");
+
+const terms =
+document.getElementById("terms");
+
+const successMessage =
+document.getElementById("successMessage");
+
+
+/* =========================
+   COMMON FUNCTIONS
+========================= */
+
+function setError(input, errorId, message) {
+
+    input.classList.remove("valid");
+    input.classList.add("invalid");
+
+    input.setAttribute("aria-invalid", "true");
+
+    document.getElementById(errorId).textContent =
+        message;
+
+    return false;
+}
+
+
+function setValid(input, errorId) {
+
+    input.classList.remove("invalid");
+    input.classList.add("valid");
+
+    input.setAttribute("aria-invalid", "false");
+
+    document.getElementById(errorId).textContent =
+        "";
+
+    return true;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+function validateFullName() {
+
+    const value =
+        fullName.value.trim();
+
+    if (!value)
+        return setError(
+            fullName,
+            "fullNameError",
+            "Full name is required."
+        );
+
+    if (value.length < 3)
+        return setError(
+            fullName,
+            "fullNameError",
+            "Name must contain at least 3 characters."
+        );
+
+    if (value.length > 50)
+        return setError(
+            fullName,
+            "fullNameError",
+            "Name cannot exceed 50 characters."
+        );
+
+    if (!/^[A-Za-z ]+$/.test(value))
+        return setError(
+            fullName,
+            "fullNameError",
+            "Name can contain only letters and spaces."
+        );
+
+    return setValid(
+        fullName,
+        "fullNameError"
+    );
+}
+
+
+/* =========================
+   EMAIL
+========================= */
+
+function validateEmail() {
+
+    const value =
+        email.value.trim();
+
+    const pattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    if (!value)
+        return setError(
+            email,
+            "emailError",
+            "Email address is required."
+        );
+
+    if (!pattern.test(value))
+        return setError(
+            email,
+            "emailError",
+            "Please enter a valid email address."
+        );
+
+    return setValid(
+        email,
+        "emailError"
+    );
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+function validatePhone() {
+
+    const value =
+        phone.value.trim();
+
+    const cleaned =
+        value.replace(/[\s()-]/g, "");
+
+    if (!value)
+        return setError(
+            phone,
+            "phoneError",
+            "Phone number is required."
+        );
+
+    if (!/^\+?[0-9]{7,15}$/.test(cleaned))
+        return setError(
+            phone,
+            "phoneError",
+            "Enter a valid phone number."
+        );
+
+    return setValid(
+        phone,
+        "phoneError"
+    );
+}
+
+
+/* =========================
+   DATE OF BIRTH
+========================= */
+
+function validateDOB() {
+
+    if (!dob.value)
+        return setError(
+            dob,
+            "dobError",
+            "Date of birth is required."
+        );
+
+    const birth =
+        new Date(dob.value);
+
+    const today =
+        new Date();
+
+    if (birth > today)
+        return setError(
+            dob,
+            "dobError",
+            "Date cannot be in the future."
+        );
+
+    let age =
+        today.getFullYear() -
+        birth.getFullYear();
+
+    const month =
+        today.getMonth() -
+        birth.getMonth();
+
+    if (
+        month < 0 ||
+        (
+            month === 0 &&
+            today.getDate() < birth.getDate()
+        )
+    ) {
+        age--;
+    }
+
+    if (age < 18)
+        return setError(
+            dob,
+            "dobError",
+            "You must be at least 18
